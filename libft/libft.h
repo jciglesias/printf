@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 18:29:37 by jiglesia          #+#    #+#             */
-/*   Updated: 2019/10/24 16:26:53 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/14 00:37:40 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_countchr(char c, char *str);
+char	*ft_strrev(char *str);
+char	*ft_realloc(char *str, int n);
+void	ft_putchar(char c);
+void	ft_putnbr(int nb);
 #endif

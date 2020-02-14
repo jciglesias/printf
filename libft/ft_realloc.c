@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:40:12 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/01/21 16:45:05 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/13 18:10:23 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ char	*ft_realloc(char *str, int n)
 	}
 	else
 		dup = ft_strdup("");
-	if (!(bowl = (char *)malloc(sizeof(char) * (ft_strlen(dup) + n + 1))))
+	if (!(str = (char *)malloc(sizeof(char) * (ft_strlen(dup) + n + 1))))
 		return (NULL);
 	while (dup[++i])
-		bowl[i] = dup[i];
-	bowl[i] = 0;
+		str[i] = dup[i];
+	str[i] = 0;
 	if (dup)
 		free(dup);
-	return (bowl);
+	return (str);
 }
