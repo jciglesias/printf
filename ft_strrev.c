@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 20:59:59 by jiglesia          #+#    #+#             */
-/*   Updated: 2019/10/17 21:00:51 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/02/13 18:31:12 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/02/15 20:09:03 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int		ft_isdigit(int c)
+char	*ft_strrev(char *str)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	int		i;
+	int		j;
+	char	*dup;
+
+	i = 0;
+	j = ft_strlen(str);
+	dup = ft_strdup(str);
+	while (j)
+		str[i++] = dup[--j];
+	free(dup);
+	return (str);
 }

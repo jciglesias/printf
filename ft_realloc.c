@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 15:39:21 by jiglesia          #+#    #+#             */
-/*   Updated: 2019/10/24 15:39:02 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/01/21 16:40:12 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/02/15 20:09:25 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_realloc(char *str, int n)
 {
-	int i;
+	char		*dup;
+	int			i;
 
-	i = 0;
-	if (n == 0)
-		return ;
-	while (n-- > 0)
-		((char *)s)[i++] = 0;
+	i = -1;
+	if (str)
+	{
+		dup = ft_strdup(str);
+		free(str);
+	}
+	else
+		dup = ft_strdup("");
+	if (!(str = (char *)malloc(sizeof(char) * (ft_strlen(dup) + n + 1))))
+		return (NULL);
+	while (dup[++i])
+		str[i] = dup[i];
+	str[i] = 0;
+	if (dup)
+		free(dup);
+	return (str);
 }

@@ -6,11 +6,11 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 19:36:00 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/13 19:41:49 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/15 19:12:17 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.c"
+#include "ft_printf.h"
 
 int	ft_ulength(unsigned int a)
 {

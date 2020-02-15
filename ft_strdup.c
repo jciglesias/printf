@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 20:31:09 by jiglesia          #+#    #+#             */
-/*   Updated: 2019/10/30 21:04:04 by jiglesia         ###   ########.fr       */
+/*   Created: 2019/10/17 21:09:56 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/02/15 20:08:39 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strdup(const char *s)
 {
-	int i;
-	int a;
-	int b;
+	int			i;
+	char		*dup;
 
 	i = 0;
-	b = 0;
-	while (nptr[i] && (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t' ||
-					nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == '\v'))
+	while (s[i])
 		i++;
-	if (nptr[i] == '-')
+	if (!(dup = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		a = -1;
+		dup[i] = (char)s[i];
 		i++;
 	}
-	else if (nptr[i] == '+')
-	{
-		i++;
-		a = 1;
-	}
-	else
-		a = 1;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-		b = ((b * 10) + (a * (nptr[i++] - '0')));
-	return (b);
+	dup[i] = 0;
+	return (dup);
 }

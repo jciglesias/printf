@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:15:35 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/15 19:04:43 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/15 20:05:12 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "libft.h"
 
 /*
 **  # 0 + - <space>
@@ -66,4 +65,12 @@ int		ft_p(t_flags x,va_list ap);
 int		print_address(t_flags x, void *p0);
 int		ft_printf(char *flags, ...);
 int		flag_u(unsigned int u);
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
+size_t	ft_strlen(const char *s);
+int		ft_countchr(char c, char *str);
+int		ft_atoi(const char *nptr);
+char	*ft_strdup(const char *s);
+char	*ft_strrev(char *str);
+char	*ft_realloc(char *str, int n);
 #endif

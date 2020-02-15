@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 21:08:05 by jiglesia          #+#    #+#             */
-/*   Updated: 2019/10/24 21:23:06 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/01/21 15:44:43 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/02/15 20:06:38 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+static void		ft_putint(unsigned int n)
 {
-	int			i;
-	char		a;
+    if (n > 9)
+        ft_putint(n / 10);
+    ft_putchar(n % 10 + '0');
+}
 
-	i = 0;
-	a = (char)c;
-	while (s[i])
+void			ft_putnbr(int n)
+{
+    unsigned int a;
+
+	a = (n < 0) ? -n : n;
+    if (n < 0)
 	{
-		if (s[i++] == a)
-			return ((char *)s + --i);
+		ft_putchar('-');
 	}
-	if (a == '\0')
-		return ((char *)s + i);
-	return (NULL);
+	ft_putint(a);
 }

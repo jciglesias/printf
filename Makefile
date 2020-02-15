@@ -6,15 +6,13 @@
 #    By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/12 23:03:24 by jiglesia          #+#    #+#              #
-#    Updated: 2020/02/15 18:59:18 by jiglesia         ###   ########.fr        #
+#    Updated: 2020/02/15 20:11:08 by jiglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		=	libftprintf.a
-INCLUDE		=	./libft/
-SRC			=	checkflags.c  flags_cspdu.c  ft_intwidth.c  ft_printf.c ft_process.c  ft_u.c  ft_uxX.c saveflags.c flag_p.c
-SUB_MAKE	=	./libft/
-INC_LIB		=	-L./libft/ -lft
+INCLUDE		=	./
+SRC			=	checkflags.c  flags_cspdu.c  ft_intwidth.c  ft_printf.c ft_process.c  ft_u.c  ft_uxX.c saveflags.c flag_p.c ft_putnbr.c ft_strlen.c ft_countchr.c ft_atoi.c ft_strdup.c ft_strrev.c ft_realloc.c ft_putchar.c
 
 OBJS		=	$(SRC:.c=.o)
 
@@ -27,22 +25,15 @@ RM			=	/bin/rm -f
 				$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
 
 $(NAME)	: 		$(OBJS)
-				ls
-				(cd $(SUB_MAKE) && $(MAKE))
-				ls
-				$(CC)  -I $(INCLUDE) $(CFLAGS) -o $(NAME) $(OBJS) $(INC_LIB)
+				-@ar rc $(NAME) $(OBJS)
+				ranlib $(NAME)
 
 clean	:
 				$(RM) $(OBJS)
-				ls
-				(cd $(SUB_MAKE) && $(MAKE) clean)
 
 all		:		$(NAME)
 
 fclean	:		clean
 				$(RM) $(NAME)
-				ls
-				(cd $(SUB_MAKE) && $(MAKE) fclean)
 
 re		:		fclean all
-				(cd $(SUB_MAKE) && $(MAKE) re)

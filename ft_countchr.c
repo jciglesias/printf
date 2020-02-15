@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_countchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 14:10:21 by jiglesia          #+#    #+#             */
-/*   Updated: 2019/10/07 15:55:23 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/02/11 17:35:46 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/02/15 20:07:37 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_countchr(char c, char *str)
 {
-	unsigned char *str;
+	int i;
+	int a;
 
-	str = (unsigned char *)b;
-	while (len-- > 0)
-		*(str++) = (unsigned char)c;
-	return (b);
+	i = 0;
+	a = 0;
+	while (str[i])
+		if (str[i++] == c)
+			a++;
+	return (a);
 }

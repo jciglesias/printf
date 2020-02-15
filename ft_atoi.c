@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 21:15:48 by jiglesia          #+#    #+#             */
-/*   Updated: 2019/10/30 14:46:09 by jiglesia         ###   ########.fr       */
+/*   Created: 2019/10/17 20:31:09 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/02/15 20:08:12 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_atoi(const char *nptr)
 {
-	size_t i;
+	int i;
+	int a;
+	int b;
 
 	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[i] && size-- > 1)
+	b = 0;
+	while (nptr[i] && (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t' ||
+					nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == '\v'))
+		i++;
+	if (nptr[i] == '-')
 	{
-		dst[i] = src[i];
+		a = -1;
 		i++;
 	}
-	dst[i] = 0;
-	return (ft_strlen(src));
+	else if (nptr[i] == '+')
+	{
+		i++;
+		a = 1;
+	}
+	else
+		a = 1;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+		b = ((b * 10) + (a * (nptr[i++] - '0')));
+	return (b);
 }
