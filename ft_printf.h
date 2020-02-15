@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:15:35 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/14 00:26:50 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/15 19:04:43 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,11 @@ int		ft_uprecision(t_flags x, unsigned int a);
 int		ft_di(t_flags x, va_list ap);
 int		ft_cs(t_flags x, va_list ap);
 int		ft_p(t_flags x,va_list ap);
-int		print_address(void *p0);
 int		flag_di(int d);
 int		flag_c(t_flags x, char c);
 int		flag_s(t_flags x, char *s);
+int		ft_p(t_flags x,va_list ap);
+int		print_address(t_flags x, void *p0);
 int		ft_printf(char *flags, ...);
+int		flag_u(unsigned int u);
 #endif

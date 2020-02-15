@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 22:39:12 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/14 00:14:58 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/15 18:51:41 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,8 @@ int	ft_cs(t_flags x, va_list ap)
 	else
 		return (flag_s(x, va_arg(ap, char *)));
 }
-/*
+
 int	ft_p(t_flags x,va_list ap)
 {
-
+	return (print_address(x, va_arg(ap, void *)));;
 }
-*/

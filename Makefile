@@ -6,13 +6,13 @@
 #    By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/12 23:03:24 by jiglesia          #+#    #+#              #
-#    Updated: 2020/02/14 00:28:24 by jiglesia         ###   ########.fr        #
+#    Updated: 2020/02/15 18:59:18 by jiglesia         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME		=	libftprintf.a
 INCLUDE		=	./libft/
-SRC			=	checkflags.c  flags_cspdu.c  ft_intwidth.c  ft_printf.c  ft_printf.h  ft_process.c  ft_u.c  ft_uxX.c saveflags.c
+SRC			=	checkflags.c  flags_cspdu.c  ft_intwidth.c  ft_printf.c ft_process.c  ft_u.c  ft_uxX.c saveflags.c flag_p.c
 SUB_MAKE	=	./libft/
 INC_LIB		=	-L./libft/ -lft
 
@@ -27,18 +27,22 @@ RM			=	/bin/rm -f
 				$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
 
 $(NAME)	: 		$(OBJS)
-				-@(cd $(SUB_MAKE) && $(MAKE))
-				-@$(CC)  -I $(INCLUDE) $(CFLAGS) -o $(NAME) $(OBJS) $(INC_LIB)
+				ls
+				(cd $(SUB_MAKE) && $(MAKE))
+				ls
+				$(CC)  -I $(INCLUDE) $(CFLAGS) -o $(NAME) $(OBJS) $(INC_LIB)
 
 clean	:
-				-@$(RM) $(OBJS)
-				-@(cd $(SUB_MAKE) && $(MAKE) clean)
+				$(RM) $(OBJS)
+				ls
+				(cd $(SUB_MAKE) && $(MAKE) clean)
 
 all		:		$(NAME)
 
 fclean	:		clean
-				-@$(RM) $(NAME)
-				-@(cd $(SUB_MAKE) && $(MAKE) fclean)
+				$(RM) $(NAME)
+				ls
+				(cd $(SUB_MAKE) && $(MAKE) fclean)
 
 re		:		fclean all
-				-@(cd $(SUB_MAKE) && $(MAKE) re)
+				(cd $(SUB_MAKE) && $(MAKE) re)

@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 15:44:43 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/01/21 16:26:52 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/15 17:12:03 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 static void		ft_putint(unsigned int n)
 {
     if (n > 9)
-        ft_putnint(n / 10);
+        ft_putint(n / 10);
     ft_putchar(n % 10 + '0');
 }
- 
-void			ft_putnbr(int nb)
+
+void			ft_putnbr(int n)
 {
-    unsigned int n;
- 
-    if (nb < 0)
-        ft_putchar('-');
-	n = (nb < 0 ? -nb : nb);
-	ft_putint(nb);
+    unsigned int a;
+
+	a = (n < 0) ? -n : n;
+    if (n < 0)
+	{
+		ft_putchar('-');
+	}
+	ft_putint(a);
 }
