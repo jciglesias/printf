@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 10:39:26 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/14 01:23:44 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 13:45:19 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 int		ft_checkflags(char *flags, int i)
 {
+	i++;
 	checkflag(flags, &i);
 	checkwidth(flags, &i);
 	checkprecision(flags, &i);
@@ -40,9 +41,12 @@ int		ft_flagprocess(t_flags x, va_list ap)
 int		ft_printflag(int *i, char *flags, va_list ap)
 {
 	if (ft_checkflags(flags, *i))
-		return (ft_flagprocess(saveflags(flags, ++i), ap));
+		return (ft_flagprocess(saveflags(flags, &i), ap));
 	else if (flags[*i + 1] && flags[*i + 1] == '%')
-		return (write(1, &flags[(*i) += 2], 1));
+	{
+		(*i) += 2;
+		return (write(1, "%", 1));
+	}
 	else
 		return (write(1, &flags[(*i)++], 1));
 }
