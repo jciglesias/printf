@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:15:35 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/16 18:10:05 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 23:09:23 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	checkflag(char *flags, int *i);
 void	checkwidth(char *flags, int *i);
 void	checkprecision(char *flags, int *i);
 int		checkconvertion(char *flags, int *i);
-t_flags	saveflags(char *flags, int **i);
+t_flags	saveflags(char *flags, int **i, va_list ap);
 int		ft_uxX(t_flags x, va_list ap);
 int		ft_u(t_flags x, unsigned int a);
 int		ft_xX(t_flags x, char *str);

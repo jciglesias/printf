@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 12:53:49 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/14 00:27:36 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 23:29:05 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,22 @@ void	checkflag(char *flags, int *i)
 
 void    checkwidth(char *flags, int *i)
 {
-	//check * xor number
-	while (flags[*i] && ft_countchr(flags[*i], "0123456789*"))
+	if (flags[(*i)] == '*')
+	{
+		(*i)++;
+		return ;
+	}
+	while (flags[*i] && ft_countchr(flags[*i], "0123456789"))
 		(*i)++;
 }
 
 void    checkprecision(char *flags, int *i)
 {
-	//check * xor number
 	if (flags[*i] == '.')
 	{
-		(*i)++;
-		while (flags[*i] && ft_countchr(flags[*i], "0123456789*"))
+		if (flags[++(*i)] == '*')
+			return ;
+		while (flags[*i] && ft_countchr(flags[*i], "0123456789"))
 			(*i)++;
 	}
 }
