@@ -6,20 +6,20 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 15:44:43 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/15 20:06:38 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 17:47:23 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		ft_putint(unsigned int n)
+void	ft_putint(unsigned int n)
 {
     if (n > 9)
         ft_putint(n / 10);
     ft_putchar(n % 10 + '0');
 }
 
-void			ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
     unsigned int a;
 

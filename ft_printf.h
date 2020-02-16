@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:15:35 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/16 13:20:46 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 18:10:05 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,11 @@ int		ft_printf(char *flags, ...);
 int		flag_u(unsigned int u);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
-size_t	ft_strlen(const char *s);
+int		ft_strlen(const char *s);
 int		ft_countchr(char c, char *str);
 int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
 char	*ft_strrev(char *str);
 char	*ft_realloc(char *str, int n);
+void	ft_putint(unsigned int n);
 #endif

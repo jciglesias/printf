@@ -6,13 +6,13 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 21:20:59 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/15 20:07:03 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 18:09:21 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	size_t i;
 

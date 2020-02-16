@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 22:39:12 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/15 20:11:26 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 18:38:56 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,20 @@
 ** - == left justification
 */
 
-char	*str_hex(unsigned int a)
+char	*str_hex(t_flags x, unsigned int a)
 {
 	char	*str;
 	int		i;
 
 	i = 0;
-	str = "";
+	str = ft_strdup("");
 	while (a)
 	{
 		str = ft_realloc(str, 1);
-		str[i++] = hex_digit((int)(a % 16));
+		if (x.convertion == 'x')
+			str[i++] = hex_digit((int)(a % 16));
+		else
+			str[i++] = hex_digit((int)(a % 16)) - 32;
 		a /= 16;
 	}
 	str = ft_strrev(str);
@@ -37,9 +40,9 @@ char	*str_hex(unsigned int a)
 int	ft_uxX(t_flags x, va_list ap)
 {
 	if (x.convertion == 'x')
-		return (ft_xX(x, str_hex((unsigned int)va_arg(ap, int))));
+		return (ft_xX(x, str_hex(x, (unsigned int)va_arg(ap, int))));
 	else if (x.convertion == 'X')
-		return (ft_xX(x, str_hex((unsigned int)va_arg(ap, int))));
+		return (ft_xX(x, str_hex(x, (unsigned int)va_arg(ap, int))));
 	else
 		return (ft_u(x, (unsigned int)va_arg(ap, int)));
 }

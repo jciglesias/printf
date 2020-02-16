@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:31:57 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/15 18:58:46 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 18:46:26 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,13 @@ int		ft_pwidth(t_flags x, int a)
 	int sum;
 	int	i;
 
-	i = 0;
-	while (a -= 4 >= 0)
+	i = 2;
+	while (a >= 0)
+	{
+		a -= 4;
 		i++;
-	dif = x.width - (i + x.precision);
+	}
+	dif = x.width - i - x.precision;
 	sum = dif;
 	while (dif-- > 0)
 		ft_putchar((x.zero && !x.minus && !x.precision) ? '0' : ' ');
@@ -40,8 +43,11 @@ int		ft_pprecision(t_flags x, int a)
 	int i;
 
 	i = 0;
-	while (a -= 4 >= 0)
+	while (a >= 0)
+	{
+		a -= 4;
 		i++;
+	}
 	dif = x.precision - i;
 	sum = dif;
 	while (dif-- > 0)
@@ -74,14 +80,3 @@ int		print_address(t_flags x, void *p0)
 		nb += ft_pwidth(x, a);
 	return (nb);
 }
-/*
-int main()
-{
-	//char *p = "hello";
-	int p = 3333;
-	int *pp = &p;
-	int **ppp = &pp;
-	print_address_hex((void*)*ppp);
-	printf("\n%p\n", (void*)*ppp);
-}
-*/

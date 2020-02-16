@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:52:20 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/14 00:23:49 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/16 17:49:20 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,12 @@ int		flag_di(int d)
 int		flag_u(unsigned int u)
 {
 	int		i;
-	int		j;
-	char	*str;
 
-	i = 0;
+	ft_putint(u);
 	while (u)
 	{
-		str = ft_realloc(str, 1);
-		str[i++] = u % 10;
+		i++;
 		u /= 10;
 	}
-	str[i] = 0;
-	j = i;
-	while (--i >= 0)
-		ft_putchar(str[i]);
-	return (j);
+	return (i);
 }
