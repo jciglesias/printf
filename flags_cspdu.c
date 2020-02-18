@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:52:20 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/16 17:49:20 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/17 01:16:40 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,23 @@ int		flag_s(t_flags x, char *s)
 	int	a;
 	int sum;
 
-	i = 0;
-	a = x.width - ft_strlen(s);
-	sum = (a > 0) ? a : 0;
-	if (!x.minus)
-		while (a-- > 0)
-			ft_putchar(' ');
-	while (s[i])
-		ft_putchar(s[i++]);
-	if (x.minus)
-		while (a-- > 0)
-			ft_putchar(' ');
-	sum += i;
-	return (sum);
+	if (s)
+	{
+		i = 0;
+		a = x.width - ft_strlen(s);
+		sum = (a > 0) ? a : 0;
+		if (!x.minus)
+			while (a-- > 0)
+				ft_putchar(' ');
+		while (s[i])
+			ft_putchar(s[i++]);
+		if (x.minus)
+			while (a-- > 0)
+				ft_putchar(' ');
+		sum += i;
+		return (sum);
+	}
+	return (0);
 }
 
 int		flag_di(int d)

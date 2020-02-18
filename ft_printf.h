@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:15:35 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/16 23:09:23 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/18 17:55:59 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,6 @@ char	*ft_strdup(const char *s);
 char	*ft_strrev(char *str);
 char	*ft_realloc(char *str, int n);
 void	ft_putint(unsigned int n);
+int		ft_printf(char *format, ...);
+int		ft_void0(t_flags x);
 #endif
