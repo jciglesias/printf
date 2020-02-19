@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 12:53:49 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/18 23:58:16 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/19 12:07:40 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void    checkprecision(char *flags, int *i)
 
 int		checkconvertion(char *flags, int *i)
 {
-	if (flags[*i] && ft_countchr(flags[*i], "cspdiuxX"))
+	if (flags[*i] && ft_countchr(flags[*i], "cspdiuxX%"))
 		return (1);
 	return (0);
 }

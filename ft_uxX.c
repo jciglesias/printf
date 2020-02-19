@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 15:32:13 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/19 00:25:53 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/19 14:56:44 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_xX(t_flags x, char *str)
 
 	i = 0;
 	sum = 0;
+	if (x.point && !x.precision && str[0] == '0')
+		return (0);
 	if (!x.minus)
 		sum += ft_xwidth(x, str);
 	if (x.precision)

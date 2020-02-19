@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 18:31:12 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/15 20:09:03 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/19 14:52:10 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	*ft_strrev(char *str)
 	dup = ft_strdup(str);
 	while (j)
 		str[i++] = dup[--j];
+	str[i] = 0;
 	free(dup);
 	return (str);
 }
