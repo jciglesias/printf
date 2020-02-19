@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:52:20 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/17 01:16:40 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/18 19:57:30 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		flag_s(t_flags x, char *s)
 		sum += i;
 		return (sum);
 	}
-	return (0);
+	return (ft_snull(x));
 }
 
 int		flag_di(int d)

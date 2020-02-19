@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:15:35 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/18 17:55:59 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/18 20:12:44 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct			s_flags
 	int					width;
 	int					wstar;
 	int					precision;
+	int					point;
 	int					pstar;
 	/*
 	**  type
@@ -76,4 +77,5 @@ char	*ft_realloc(char *str, int n);
 void	ft_putint(unsigned int n);
 int		ft_printf(char *format, ...);
 int		ft_void0(t_flags x);
+int		ft_snull(t_flags x);
 #endif

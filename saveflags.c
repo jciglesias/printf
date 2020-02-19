@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:04:37 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/16 23:06:25 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/19 00:12:38 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_flags	initflags(t_flags x)
 	x.wstar = 0;
 	x.precision = 0;
 	x.pstar = 0;
+	x.point = 0;
 	return (x);
 }
 
@@ -50,6 +51,7 @@ t_flags	fprecision(t_flags x, char *flags, int ***i)
 {
 	if (flags[***i] == '.')
 	{
+		x.point = 1;
 		x.precision = ft_atoi(&flags[++(***i)]);
 		while (flags[***i] >= '0' && flags[***i] <= '9')
 			(***i)++;
@@ -70,7 +72,9 @@ t_flags	saveflags(char *flags, int **i, va_list ap)
 	x = fwidth(x, flags, &i);
 	if (x.wstar)
 		x.width = va_arg(ap, int);
-	x.width = (x.width > 0) ? x.width : 0;
+	if (x.width < 0)
+		x.minus = 1;
+	x.width = (x.width > 0) ? x.width : -x.width;
 	x = fprecision(x, flags, &i);
 	if (x.pstar)
 		x.precision = va_arg(ap, int);

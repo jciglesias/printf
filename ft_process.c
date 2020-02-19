@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 22:39:12 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/16 18:38:56 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/19 00:23:17 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	ft_di(t_flags x, va_list ap)
 	int sum;
 
 	a = (int)va_arg(ap, int);
+	if (x.point && !x.precision && !a)
+		return (0);
 	sum = write(1, "-", a < 0);
 	if (!x.minus)
 		sum += ft_intwidth(x, a);
