@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 15:32:13 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/19 14:56:44 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/20 16:05:45 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,17 @@ int	ft_uwidth(t_flags x, unsigned int a)
 
 int	ft_u(t_flags x, unsigned int a)
 {
-        int sum;
+	int sum;
 
-        sum = 0;
-		if (x.point && !x.precision && !a)
-			return (sum);
-        if (!x.minus)
-                sum += ft_uwidth(x, a);
-        if (x.precision)
-                sum += ft_uprecision(x, a);
-        sum += flag_u(a);
-        if (x.minus)
-                sum += ft_uwidth(x, a);
-        return (sum);
-
+	sum = 0;
+	if (x.point && !x.precision && !a)
+		return (sum);
+	if (!x.minus)
+		sum += ft_uwidth(x, a);
+	if (x.precision)
+		sum += ft_uprecision(x, a);
+	sum += flag_u(a);
+	if (x.minus)
+		sum += ft_uwidth(x, a);
+	return (sum);
 }

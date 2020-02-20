@@ -6,7 +6,7 @@
 /*   By: jiglesia <jiglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 21:25:15 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/19 22:44:42 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/20 16:57:59 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_intlength(int a)
 {
 	int i;
 
+	if (!a)
+		return (1);
 	i = (a < 0) ? 1 : 0;
 	while (a)
 	{
