@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 15:44:43 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/19 21:53:05 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/22 17:00:53 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@ void	ft_putnbr(int n)
     unsigned int a;
 
 	a = (n < 0) ? -n : n;
-    if (n < 0)
-		ft_putchar('-');
-	ft_putint(a);
+ 	ft_putint(a);
 }

@@ -6,7 +6,7 @@
 /*   By: jiglesia <jiglesia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 21:25:15 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/20 16:57:59 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/22 21:16:47 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_intwidth(t_flags x, int a)
 	dif -= (ft_intlength(a) > x.precision) ? 0 : a < 0;
 	sum = dif;
 	while (dif-- > 0)
-		ft_putchar((x.zero && !x.minus && !x.precision) ? '0' : ' ');
+		ft_putchar((x.zero && !x.minus && !x.point) ? '0' : ' ');
 	return ((sum > 0) ? sum : 0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:15:35 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/18 20:12:44 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/22 18:42:53 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		flag_c(t_flags x, char c);
 int		flag_s(t_flags x, char *s);
 int		ft_p(t_flags x,va_list ap);
 int		print_address(t_flags x, void *p0);
-int		ft_printf(char *flags, ...);
+int		ft_printf(char *flags, ...) __attribute__ ((format (printf, 1, 2)));
 int		flag_u(unsigned int u);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);

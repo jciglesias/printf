@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 19:36:00 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/16 17:18:07 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/22 21:35:57 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_ulength(unsigned int a)
 {
 	int i;
 
+	if (!a)
+		return (1);
 	i = 0;
 	while (a)
 	{

@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 10:39:26 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/19 12:50:15 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/22 23:16:41 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,17 @@ int		ft_print(va_list ap, char *flags, int sum)
 	int i;
 
 	i = 0;
+	if (flags[0] == '%' && flags[1] == 0)
+		return (-1);
 	while (flags[i])
 	{
 		if (flags[i] == '%')
 			sum += ft_printflag(&i, flags, ap);
 		else if (flags[i] == '\\' && flags[i + 1])
-			sum += write(1, &flags[i += 2], 2);
+		{
+			sum += write(1, &flags[i], 2);
+			i += 2;
+		}
 		else
 		{
 			ft_putchar(flags[i++]);

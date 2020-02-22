@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 22:39:12 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/19 21:40:26 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/22 22:39:51 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ char	*str_hex(t_flags x, unsigned int a)
 	int		i;
 
 	i = 0;
-	str = ft_realloc(ft_strdup(""), 1);
-	str[i] = '0';
+	str = ft_strdup("0");
 	while (a)
 	{
 		if (x.convertion == 'x')
@@ -60,7 +59,7 @@ int	ft_di(t_flags x, va_list ap)
 	int sum;
 
 	a = (int)va_arg(ap, int);
-	if (x.point && !x.precision && !a)
+	if (x.point && !x.precision && !a && !x.width)
 		return (0);
 	sum = 0;
 	if (x.zero && !x.precision && a < 0)
@@ -71,7 +70,10 @@ int	ft_di(t_flags x, va_list ap)
 		sum += write(1, "-", 1);
 	if (x.precision)
 		sum += ft_intprecision(x, a);
-	sum += flag_di((a < 0) ? -a : a);
+	if (x.point && !x.precision && !a)
+		sum += write(1, " ", 1);
+	else
+		sum += flag_di(a);
 	if (x.minus)
 		sum += ft_intwidth(x, a);
 	return (sum);

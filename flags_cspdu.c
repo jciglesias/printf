@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:52:20 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/20 16:35:15 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/02/22 21:39:57 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int		flag_u(unsigned int u)
 
 	i = 0;
 	ft_putint(u);
+	if (!u)
+		return (1);
 	while (u)
 	{
 		i++;
