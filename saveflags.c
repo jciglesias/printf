@@ -6,14 +6,16 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:04:37 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/19 12:10:19 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/04/27 13:07:11 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_flags	initflags(t_flags x)
+t_flags	initflags(void)
 {
+	t_flags x;
+
 	x.zero = 0;
 	x.minus = 0;
 	x.width = 0;
@@ -67,7 +69,7 @@ t_flags	saveflags(char *flags, int **i, va_list ap)
 	t_flags x;
 
 	(**i)++;
-	x = initflags(x);
+	x = initflags();
 	x = flgs(x, flags, &i);
 	x = fwidth(x, flags, &i);
 	if (x.wstar)
