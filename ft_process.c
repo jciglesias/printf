@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 22:39:12 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/22 22:39:51 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/04/27 22:31:48 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char	*str_hex(t_flags x, unsigned int a)
 			str[i++] = (hex_digit((int)(a % 16)) >= 'a') ?
 				hex_digit((int)(a % 16)) - 32 : hex_digit((int)(a % 16));
 		str = ft_realloc(str, 1);
+		str[i] = 0;
 		a /= 16;
 	}
 	str = ft_strrev(str);
