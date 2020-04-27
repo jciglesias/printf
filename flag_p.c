@@ -6,7 +6,7 @@
 /*    By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:31:57 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/18 17:46:00 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/04/27 21:32:12 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int		print_address(t_flags x, void *p0)
 
 	p = (unsigned long)p0;
 	if (!p)
-		return (ft_void0(x));
+		return (ft_p0(x));
 	i = (p) ? ft_hexsize((sizeof(p) << 3) - 20, p) : 0;
 	a = i;
 	nb = 0;
