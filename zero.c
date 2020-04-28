@@ -6,11 +6,26 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:46:27 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/04/27 21:33:33 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/04/28 16:52:55 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	ft_percent(t_flags x)
+{
+	int sum;
+
+	sum = 0;
+	if (!x.minus)
+		sum += ft_intwidth(x, 1);
+	if (x.precision)
+		sum += ft_intprecision(x, 1);
+	sum += write(1, "%", 1);
+	if (x.minus)
+		sum += ft_intwidth(x, 1);
+	return (sum);
+}
 
 int	ft_void0(t_flags x)
 {

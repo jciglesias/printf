@@ -6,7 +6,7 @@
 /*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 17:15:35 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/04/27 21:34:14 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/04/28 16:53:42 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,5 @@ int		ft_printf(char *format, ...);
 int		ft_void0(t_flags x);
 int		ft_p0(t_flags x);
 int		ft_snull(t_flags x);
+int		ft_percent(t_flags x);
 #endif
