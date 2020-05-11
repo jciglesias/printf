@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flag_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*    By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 18:31:57 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/04/27 21:32:12 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/05/11 18:22:04 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/05/11 18:27:20 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	hex_digit(int n)
 
 int		ft_pwidth(t_flags x, int a)
 {
-	int     dif;
+	int dif;
 	int sum;
 	int	i;
 
@@ -75,22 +75,19 @@ int		print_address(t_flags x, void *p0)
 		return (ft_p0(x));
 	i = (p) ? ft_hexsize((sizeof(p) << 3) - 20, p) : 0;
 	a = i;
-	nb = 0;
-	if (!x.minus)
-		nb += ft_pwidth(x, a);
+	nb = (!x.minus) ? ft_pwidth(x, a) : 0;
 	nb += write(1, "0x", 2);
 	if (x.precision || (x.zero && !x.minus && !x.precision))
 		nb += ft_pprecision(x, a);
 	else
 	{
-		while(i >= 0)
+		while (i >= 0)
 		{
 			nb++;
 			ft_putchar(hex_digit((p >> i) & 0xf));
 			i -= 4;
 		}
 	}
-	if (x.minus)
-		nb += ft_pwidth(x, a);
+	nb += (x.minus) ? ft_pwidth(x, a) : 0;
 	return (nb);
 }

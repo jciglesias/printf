@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   saveflags.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
+/*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 17:04:37 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/04/27 13:07:11 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/05/11 19:29:32 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/05/12 01:42:59 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_flags	initflags(void)
 	return (x);
 }
 
-t_flags flgs(t_flags x, char *flags, int ***i)
+t_flags	flgs(t_flags x, char *flags, int ***i)
 {
 	while (flags[***i] && ft_countchr(flags[***i], "0-"))
 	{

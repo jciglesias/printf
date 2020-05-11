@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkflags.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
+/*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 12:53:49 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/19 12:07:40 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/05/11 18:18:42 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/05/11 18:20:48 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	checkflag(char *flags, int *i)
 		(*i)++;
 }
 
-void    checkwidth(char *flags, int *i)
+void	checkwidth(char *flags, int *i)
 {
 	if (flags[(*i)] == '*')
 	{
@@ -34,7 +34,7 @@ void    checkwidth(char *flags, int *i)
 		(*i)++;
 }
 
-void    checkprecision(char *flags, int *i)
+void	checkprecision(char *flags, int *i)
 {
 	if (flags[*i] == '.')
 	{

@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 10:39:26 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/04/28 16:54:49 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/05/11 18:45:27 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_flagprocess(t_flags x, va_list ap)
 	if (x.convertion == '%')
 		return (ft_percent(x));
 	if (ft_countchr(x.convertion, "uxX"))
-		return (ft_uxX(x, ap));
+		return (ft_ux(x, ap));
 	else if (ft_countchr(x.convertion, "di"))
 		return (ft_di(x, ap));
 	else if (ft_countchr(x.convertion, "cs"))

@@ -6,7 +6,7 @@
 /*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 17:46:27 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/04/28 16:52:55 by jiglesia         ###   ########.fr       */
+/*   Updated: 2020/05/12 01:41:16 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,26 @@ int	ft_p0(t_flags x)
 	return (a);
 }
 
+int	ft_snullwidth(t_flags x)
+{
+	int a;
+
+	a = 0;
+	if (x.point)
+	{
+		if (x.precision > 6)
+			while (x.width-- > 6)
+				a += write(1, " ", 1);
+		else
+			while (x.width-- > x.precision)
+				a += write(1, " ", 1);
+	}
+	else
+		while (x.width-- > 6)
+			a += write(1, " ", 1);
+	return (a);
+}
+
 int	ft_snull(t_flags x)
 {
 	int a;
@@ -65,39 +85,13 @@ int	ft_snull(t_flags x)
 	if (x.precision > 0 || !x.point)
 	{
 		if (!x.minus)
-		{
-			if (x.point)
-			{
-				if (x.precision > 6)
-					while (x.width-- > 6)
-						a += write(1, " ", 1);
-				else
-					while (x.width-- > x.precision)
-						a += write(1, " ", 1);
-			}
-			else
-				while (x.width-- > 6)
-					a += write(1, " ", 1);
-		}
+			a += ft_snullwidth(x);
 		if (x.precision)
 			a += write(1, "(null)", (x.precision > 6) ? 6 : x.precision);
 		else
 			a += write(1, "(null)", 6);
 		if (x.minus)
-		{
-			if (x.point)
-			{
-				if (x.precision > 6)
-					while (x.width-- > 6)
-						a += write(1, " ", 1);
-				else
-					while (x.width-- > x.precision)
-						a += write(1, " ", 1);
-			}
-			else
-				while (x.width-- > 6)
-					a += write(1, " ", 1);
-		}
+			a += ft_snullwidth(x);
 	}
 	else
 		while (x.width--)

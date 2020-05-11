@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_process.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
+/*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 22:39:12 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/04/27 22:31:48 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/05/11 18:39:00 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/05/11 18:46:46 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ char	*str_hex(t_flags x, unsigned int a)
 	return (str);
 }
 
-int	ft_uxX(t_flags x, va_list ap)
+int		ft_ux(t_flags x, va_list ap)
 {
 	if (x.convertion == 'x')
-		return (ft_xX(x, str_hex(x, (unsigned int)va_arg(ap, int))));
+		return (ft_x(x, str_hex(x, (unsigned int)va_arg(ap, int))));
 	else if (x.convertion == 'X')
-		return (ft_xX(x, str_hex(x, (unsigned int)va_arg(ap, int))));
+		return (ft_x(x, str_hex(x, (unsigned int)va_arg(ap, int))));
 	else
 		return (ft_u(x, (unsigned int)va_arg(ap, int)));
 }
@@ -54,7 +54,7 @@ int	ft_uxX(t_flags x, va_list ap)
 ** printing '-' before everything then positive number
 */
 
-int	ft_di(t_flags x, va_list ap)
+int		ft_di(t_flags x, va_list ap)
 {
 	int	a;
 	int sum;
@@ -80,7 +80,7 @@ int	ft_di(t_flags x, va_list ap)
 	return (sum);
 }
 
-int	ft_cs(t_flags x, va_list ap)
+int		ft_cs(t_flags x, va_list ap)
 {
 	if (x.convertion == 'c')
 		return (flag_c(x, (char)va_arg(ap, int)));
@@ -88,7 +88,7 @@ int	ft_cs(t_flags x, va_list ap)
 		return (flag_s(x, va_arg(ap, char *)));
 }
 
-int	ft_p(t_flags x,va_list ap)
+int		ft_p(t_flags x, va_list ap)
 {
-	return (print_address(x, va_arg(ap, void *)));;
+	return (print_address(x, va_arg(ap, void *)));
 }

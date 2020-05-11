@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uxX.c                                           :+:      :+:    :+:   */
+/*   ft_ux.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiglesia </var/spool/mail/jiglesia>        +#+  +:+       +#+        */
+/*   By: jiglesia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 15:32:13 by jiglesia          #+#    #+#             */
-/*   Updated: 2020/02/22 22:07:56 by jiglesia         ###   ########.fr       */
+/*   Created: 2020/05/11 19:26:36 by jiglesia          #+#    #+#             */
+/*   Updated: 2020/05/11 19:28:23 by jiglesia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_xwidth(t_flags x, char *str)
 	int	sum;
 
 	dif = x.width;
-	dif -= (ft_strlen(str) > x.precision) ?	ft_strlen(str) : x.precision;
+	dif -= (ft_strlen(str) > x.precision) ? ft_strlen(str) : x.precision;
 	sum = dif;
 	while (dif-- > 0)
 		ft_putchar((x.zero && !x.minus && !x.point) ? '0' : ' ');
@@ -27,8 +27,8 @@ int	ft_xwidth(t_flags x, char *str)
 
 int	ft_xprecision(t_flags x, char *str)
 {
-	int     dif;
-	int     sum;
+	int dif;
+	int sum;
 
 	dif = x.precision - ft_strlen(str);
 	sum = dif;
@@ -37,7 +37,7 @@ int	ft_xprecision(t_flags x, char *str)
 	return ((sum > 0) ? sum : 0);
 }
 
-int	ft_xX(t_flags x, char *str)
+int	ft_x(t_flags x, char *str)
 {
 	int sum;
 	int i;
@@ -74,7 +74,7 @@ int	ft_uwidth(t_flags x, unsigned int a)
 	dif -= (ft_ulength(a) > x.precision) ? ft_ulength(a) : x.precision;
 	sum = dif;
 	while (dif-- > 0)
-                ft_putchar((x.zero && !x.minus && !x.point) ? '0' : ' ');
+		ft_putchar((x.zero && !x.minus && !x.point) ? '0' : ' ');
 	return ((sum > 0) ? sum : 0);
 }
 
